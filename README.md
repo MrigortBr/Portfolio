@@ -1,5 +1,5 @@
 
-#  Meu Portifolio
+#  Meu Portfolio
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)![Build Passed](https://img.shields.io/badge/build-passing-brightgreen)
 [![Web Page](https://img.shields.io/badge/Pagina-Web-green)](https://mrigortbr.github.io/Portifolio/)
 
