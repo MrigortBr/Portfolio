@@ -1,0 +1,172 @@
+<div id="projects" onresize="initCarousel()">
+    <h1>Projetos</h1>
+    <div id="carousel">
+        <div id="carousel-container">
+            <picture class="carousel-slide" ><img onclick="tradeProject(this)"  id="left" src="Calendar Image.jpeg" alt="" onclick=""></picture>
+            <picture class="carousel-slide" ><img id="center" src="Sday.png" alt=""></picture>
+            <picture class="carousel-slide" ><img onclick="tradeProject(this)" id="rigth" src="Users Image.jpeg" alt=""></picture>
+        </div>
+    </div>
+    <div id="languages">
+        <span>Vue.js</span>
+        <span>Node.js</span>
+        <span>Bulma.css</span>
+        <span>MySql</span>
+        <span>knex</span>
+        <span>Socket.io</span>
+        <span>animation.js</span>        
+        <span>socket.io</span>        
+        <span>bcrypt</span>        
+        <span>jsonwebtoken</span>        
+        <span>Express</span>
+        <span>Axios</span>        
+</div>
+</div>
+
+<style>
+    #projects{
+        width: 100%;
+        height: 100%;
+        background-color: #343746;
+        display: grid;
+        grid-template-rows: 20% 60% 20%;
+        user-select: none;
+    }
+
+    #projects h1{
+        color: #6C63FF;
+        font-family: Inter;
+        font-size: 50px;
+        font-weight: 700;
+        text-align: center;
+        width: fit-content;
+        margin: 1% 5%;
+        transition: .25s;
+        animation: enterText .5s forwards;
+        margin-top: 2%;
+    }
+
+    @keyframes enterText {
+        0% {
+            transform: scaleX(0);
+            transform-origin: left;
+            opacity: 0;
+        }
+        100% {
+            transform: scaleX(1);
+            transform-origin: left;
+            opacity: 1;
+        }
+    }
+
+    #projects h1::before{
+        content: "|";
+        color: #fff;
+        font-size: 45px;
+    }
+
+    #carousel{
+        height: 100%;
+        overflow-x: hidden;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #carousel-container{
+        display: flex;
+        height: 90%;
+        justify-content: center;
+    }
+
+    .carousel-slide{
+        height: 100%;
+        display: flex;   
+    }
+
+
+    #left, #rigth{
+        margin: auto;
+        border-radius: 20px;
+        filter: blur(10px);
+        transition: 0.25s;
+        height: 80%;
+        width: calc(16 / 9 * 90%);
+        margin: auto;
+    }
+
+    #left {
+        margin-right: calc(-16 / 9 * 60%);
+    }
+
+    #rigth {
+        margin-left: calc(-16 / 9 * 60%);
+    }
+
+    #left:hover, #rigth:hover{
+        filter: blur(5px);
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+
+    #center{
+        transition: .5s;
+        filter: blur(0);
+        z-index: 1;
+        border-radius: 20px;
+        box-shadow: 0px 1px 10px 0px rgba(107, 99, 255, 0.363);
+        object-fit: cover;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+
+    }
+
+    #languages{
+        width: 50%;
+        margin:  0 auto auto auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 0;
+        
+    }
+
+    #languages span{
+        margin: 1% 1%;
+        padding: .5% 2%;
+        height: fit-content;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        background-color: #6C63FF;
+        border-radius: 5px;
+        transition: .5s;
+        animation: enterLangagues .5s forwards; 
+        box-shadow: 0px 1px 30px 0px rgba(107, 99, 255, 0.363);
+    }
+
+    @keyframes enterLangagues {
+        0%{
+            transform: scale(0.1) rotate(5deg);
+        }
+        25%{
+            transform: rotate(-5deg);
+        }
+        50%{
+            transform: rotate(5deg);
+        }
+        100%{
+            transform: scale(1) rotate(0deg);
+        }
+    }
+
+
+
+</style>

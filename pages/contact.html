@@ -1,0 +1,85 @@
+<style>
+    #contact{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 70% 30%;
+        background-color: #343746;
+    }
+
+    #love{
+        height: 90%;
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        margin: auto;
+    }
+
+    #tank-you{
+        color: #6C63FF;
+        font-family: Inter;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        height: fit-content;
+        margin: 2% 0;      
+        line-height: 80px;
+    }
+
+    #messages{
+        width: 90%;
+        margin: auto;
+    }
+
+    #messages p{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        height: fit-content;
+        margin: 2% 0;
+
+    }
+
+    #social{
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: end;
+        margin: auto;
+    }
+
+    #social img{
+        padding: 2%;
+        background-color: transparent;
+        transition: 1s;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    #social img:hover{
+        padding: 2%;
+        background-color: #6C63FF;
+        box-shadow: 0px 0px 50px 10px rgb(107, 99, 255);
+    }
+</style>
+
+<div id="contact">
+    <span id="messages">
+        <h1 id="tank-you">Obrigado</h1>
+        <p>Caso queira entrar em contato.</p>
+    </span>
+    <img id="love" src="./assets/love.svg" alt="">
+    <footer id="social">
+        <a href="https://github.com/MrigortBr" target="_blank"><img src="./social/github.svg" alt=""></a>
+        <a href="mailto:igorperecom@gmail.com?subject=Ol%C3%A1%2C%20podemos%20conversar%3F&body=Ol%C3%A1%20Igor%20Pereira%20Lins%20estava%20vendo%20seu%20portif%C3%B3lio%20eu%20tenho%20interesse%20em%20conversar%20com%20voc%C3%AA%2C%20podemos%20marcar%20algo%3F%3F" target="_blank"><img src="./social/gmail.svg" alt=""></a>
+        <a href="https://www.linkedin.com/in/igor-pereira-lins-01a1691a1/" target="_blank"><img src="./social/lk.svg" alt=""></a>
+        <!-- <a href=""><img src="./social/discord.svg" alt=""></a> -->
+    </footer>
+</div>
+

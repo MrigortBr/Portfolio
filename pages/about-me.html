@@ -1,0 +1,74 @@
+<style>
+    #about-me{
+        background: #343746;
+
+        height: calc(100vh - 30px - 22px);
+        width: 100%;
+        display: flex;
+        user-select: none;
+    }
+
+    #about-me #message{
+        width: 45%;
+        height: 80%;
+        display: block;
+        margin: auto;
+        gap: 0;
+    }
+
+    #about-me #message h1{
+        color: #6C63FF;
+        font-family: Inter;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+    }
+
+    @media (max-width: 1920px) {
+    #about-me #message {
+        color: #FFF;
+        font-family: Inter;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    }
+
+    @media (max-width: 1366px) {
+    #about-me #message {
+        color: #fff;
+        font-family: Inter;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: justify;
+        }
+    }
+
+    #about-me #picture{
+        height: 90%;
+        margin: auto;
+    }
+
+    #about-me #picture img{
+        height: 100%;
+        border-radius: 20px;
+    }
+
+</style>
+
+<div id="about-me">
+    <div id="message">
+        <h1>Sobre Mim</h1>
+        Sou pró-ativo e dinâmico,estou sempre em busca pelos novos conhecimentos.
+        No momento estou a procura de uma oportunidade, onde possa aplicar e
+        compartilhar todo meu conhecimento.    
+    </div>  
+    <div id="picture">
+        <img src="./assets/eu.jpg" alt="">
+    </div>
+</div>

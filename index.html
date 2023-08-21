@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio Igor Pereira</title>
+
+    <link rel="stylesheet" href="styles/vsCode.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="content-header">
+            <img class="logo-vs" src="./assets/logoVSCODE.svg" alt="">
+            <h1 id="title-header"><a id="name-file">Olá.html </a>- Portifolio - Visual Studio Code</h1>
+        </div>
+    </header>
+
+    <!-- aside -->
+    <aside>
+        <div id="aside-content">
+            <div id="left-bar">
+                <nav>
+                    <picture class="selected-left" onclick="swipeType(this)" onmouseenter="showInfo(this)" onmouseleave="removeInfo()" title="Arquivos" type="1">
+                        <createSvg path="./assets/files.svg" onload="teste(this)"/>
+                    </picture>
+                    
+                    <picture onclick="swipeType(this)" onmouseenter="showInfo(this)" onmouseleave="removeInfo()" title="Selecionar Elementos (Em breve)" type="2">
+                        <createSvg path="./assets/find.svg" onload="teste(this)"/>
+                    </picture>
+
+                    <picture onclick="swipeType(this)" onmouseenter="showInfo(this)" onmouseleave="removeInfo()" title="Mostrar Codigo Fonte" type="3">
+                        <createSvg path="./assets/code.svg" onload="teste(this)"/>
+                    </picture>
+
+                    <picture onclick="swipeType(this)" onmouseenter="showInfo(this)" onmouseleave="removeInfo()" title="Assets (Em breve)" type="4"> 
+                        <createSvg path="./assets/explorer.svg" onload="teste(this)"/>
+                    </picture>
+
+                    <div id="world-div"onclick="tradeLanguage()">
+                        <picture id="world-picture" onmouseenter="showInfo(this)" onmouseleave="removeInfo()" title="Idioma (Em breve)">
+                            <createSvg path="./assets/world.svg" onload="teste(this)"/>
+                        </picture>
+                    </div>
+                </nav>
+            </div>
+            <div id="files-bar">
+                <div id="explorator">
+                    <h2>Explorador</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 9.5C2.60218 9.5 2.22064 9.34196 1.93934 9.06066C1.65804 8.77936 1.5 8.39782 1.5 8C1.5 7.60218 1.65804 7.22064 1.93934 6.93934C2.22064 6.65804 2.60218 6.5 3 6.5C3.39782 6.5 3.77936 6.65804 4.06066 6.93934C4.34196 7.22064 4.5 7.60218 4.5 8C4.5 8.39782 4.34196 8.77936 4.06066 9.06066C3.77936 9.34196 3.39782 9.5 3 9.5ZM8 9.5C7.60218 9.5 7.22064 9.34196 6.93934 9.06066C6.65804 8.77936 6.5 8.39782 6.5 8C6.5 7.60218 6.65804 7.22064 6.93934 6.93934C7.22064 6.65804 7.60218 6.5 8 6.5C8.39782 6.5 8.77936 6.65804 9.06066 6.93934C9.34196 7.22064 9.5 7.60218 9.5 8C9.5 8.39782 9.34196 8.77936 9.06066 9.06066C8.77936 9.34196 8.39782 9.5 8 9.5ZM13 9.5C12.6022 9.5 12.2206 9.34196 11.9393 9.06066C11.658 8.77936 11.5 8.39782 11.5 8C11.5 7.60218 11.658 7.22064 11.9393 6.93934C12.2206 6.65804 12.6022 6.5 13 6.5C13.3978 6.5 13.7794 6.65804 14.0607 6.93934C14.342 7.22064 14.5 7.60218 14.5 8C14.5 8.39782 14.342 8.77936 14.0607 9.06066C13.7794 9.34196 13.3978 9.5 13 9.5Z" fill="white"/>
+                    </svg>
+                </div>
+                <div id="topics">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.2345 3.4845C1.26933 3.44958 1.31071 3.42187 1.35627 3.40296C1.40183 3.38406 1.45067 3.37433 1.5 3.37433C1.54932 3.37433 1.59817 3.38406 1.64372 3.40296C1.68928 3.42187 1.73066 3.44958 1.7655 3.4845L6 7.71975L10.2345 3.4845C10.2694 3.44963 10.3108 3.42198 10.3563 3.40311C10.4019 3.38424 10.4507 3.37452 10.5 3.37452C10.5493 3.37452 10.5981 3.38424 10.6437 3.40311C10.6892 3.42198 10.7306 3.44963 10.7655 3.4845C10.8004 3.51936 10.828 3.56076 10.8469 3.60631C10.8658 3.65187 10.8755 3.70069 10.8755 3.75C10.8755 3.79931 10.8658 3.84813 10.8469 3.89369C10.828 3.93924 10.8004 3.98063 10.7655 4.0155L6.2655 8.5155C6.23066 8.55042 6.18928 8.57813 6.14372 8.59703C6.09817 8.61594 6.04932 8.62567 6 8.62567C5.95067 8.62567 5.90183 8.61594 5.85627 8.59703C5.81072 8.57813 5.76933 8.55042 5.7345 8.5155L1.2345 4.0155C1.19958 3.98066 1.17187 3.93928 1.15296 3.89372C1.13406 3.84817 1.12433 3.79932 1.12433 3.75C1.12433 3.70067 1.13406 3.65183 1.15296 3.60627C1.17187 3.56071 1.19958 3.51933 1.2345 3.4845Z" fill="white"/>
+                    </svg>
+
+                    <h3>Tópicos</h3>
+                </div>
+                <div class="files-item selected" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="hello-text">Olá.html</h4>
+                </div>
+                <div class="files-item" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="about-text"> Sobre.html</h4>
+                </div>
+                <div class="files-item" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="projects-text"> Projetos.html</h4>
+                </div>
+                <div class="files-item" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="competency-text"> Competencias.html</h4>
+                </div>
+                <div class="files-item" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="certificate-text"> Certificados.html</h4>
+                </div>
+                <div class="files-item" onclick="swipeLocation(this)">
+                    <img src="assets/logoHtml.svg" alt="">
+                    <h4 id="contact-text">Contato.html</h4>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div id="top-bar">
+            <span id="item-top-bar">
+                <img src="./assets/logoHtml.svg" alt="">
+                <a class="name-file">Olá.html</a>
+                <img src="./assets/close.svg" alt="">
+            </span>
+        </div>
+        <div id="app">
+        </div>
+    </main>
+
+    <footer>
+        <div id="footer-content">
+            <img src="./assets/alert.svg" alt="">
+            <span>0</span>
+            <img src="./assets/x.svg" alt="">
+            <span>0</span>
+            <p id="Copyright">Criado por <a >Igortbr</a> </p>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

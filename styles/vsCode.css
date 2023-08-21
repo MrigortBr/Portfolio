@@ -1,0 +1,403 @@
+/* Importações de fontes */
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      
+/* Configurações do BODY */
+/* Body settings */
+body{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #343746;
+}
+
+/* Configurações do header */
+/* header settings */
+
+    /* Conteúdo do header */
+    /* Header content */
+    #content-header, header{
+        background-color: #343746;
+        width: 100vw;
+        height: 30px;
+        display: flex;
+    }
+
+    /* Ajuste da logo VSCODE */
+    /* Adjust VSCODE logo */
+    #content-header .logo-vs{
+        width: 17px;
+        height: 17px;
+        margin: auto 10px;
+    }
+
+    /* Ajuste Título */
+    /* Adjust Title */
+    #content-header #title-header{
+        width: 100%;
+        margin: auto;
+        color: #FFF;
+        font-size: 12px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        text-align: center;
+    }      
+
+/* Fim configurções header */
+/* End settings header */
+
+/* Configurações aside */
+/* Settings aside */
+#aside-content{
+    display: flex;
+    margin: 0;
+}
+/* Left-bar */
+#left-bar{
+    background-color: #343746; 
+    width: 48px;
+    max-width: 48px;
+    height: calc(100vh - 30px - 22px);
+}
+
+#left-bar nav{
+    display: block;
+    display: grid;
+    grid-template-rows: 48px 48px 48px 48px calc((100vh - 30px - 22px) - (4 * 48px));
+    height: 48px;
+}
+#left-bar nav picture{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-self: center;
+    transition: .25s;
+}
+
+#left-bar nav svg{
+    padding: 1.11vh 0;
+    width: 26px;
+    margin: 0 auto;
+}
+
+.selected-left{
+    background-color: #3C3D51;
+    border-left: 5px solid #6C63FF;
+}
+
+.selected-left svg path{
+    fill: #fff;
+}
+
+.selected-left[type="1"] svg path{
+    fill: #343746;
+    stroke: #fff;
+}
+
+#left-bar nav picture:hover{
+    background-color: #3C3D51;
+    cursor: pointer;
+}
+
+#left-bar nav picture:hover svg path{
+    fill: white;
+}
+
+#left-bar nav picture:hover #files-svg path{
+    fill: #343746;
+    stroke: white;
+}
+
+#world-div{
+    height: 100%;
+    display: flex;
+}
+
+#world-picture{
+    margin-top: auto;
+}
+/* End left-bar */
+/* explorator */
+#files-bar{
+    height: calc(100vh - 30px - 22px);
+    width: 310px;
+    background: #21222C;
+}
+
+#explorator{
+    display: flex;
+    width: 95%;
+    height: 20px;
+    margin: 9px;
+}
+
+#explorator h2{
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+#explorator svg{
+    margin-left: auto;
+}
+
+#topics{
+    display: flex;
+    width: 97.5%;
+    height: 23px;
+    align-items: center;
+    background: #282A36;
+    padding-left: 2.5%;
+    margin-bottom: 10px;
+}
+
+#topics h3{
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+
+}
+
+.files-item{
+    width: 97.5%;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5%;
+
+}
+
+.files-item:hover{
+    background: #282A36;
+    cursor: pointer;
+}
+
+.files-item h4{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+}
+
+.selected{
+    background: #282A36;
+}
+/* end-explorator */
+
+/* Fim configurações aside */
+/* End Settings aside */
+
+/* Configurações app e main */
+/* settings app and main */
+main{
+    background: #343746;
+    width: calc(100vw - 310px - 48px);
+    height: calc(100vh - 30px - 22px);
+}
+#top-bar{
+    background: #191A21;
+    width: calc(100vw - 310px - 48px);
+    height: 35px;
+}
+#item-top-bar{
+    display: flex;
+    width: fit-content;
+    border-top: 1px solid #94527E;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#item-top-bar{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #282A36;
+}
+#item-top-bar img{
+    margin: 0 0.5vw;
+}
+
+#app{
+    width: calc(100vw - 310px - 48px);
+    height: calc(100vh - 30px - 22px);
+    overflow-y: hidden;
+}
+
+#app::-webkit-scrollbar{
+    width: 0;
+}
+/* fim configurações app e main */
+/* end settings app and main */
+
+/* Configurações footer */
+/* settings footer */
+#footer-content{
+    height: 22px;
+    width: 100vw;
+    background: #191A21;
+    margin-top: 0;
+    color: white;
+    display: flex;
+}
+#footer-content img{
+    height: 16px;
+    margin: auto .25%;
+}
+
+#Copyright{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    margin: auto;
+}
+
+#Copyright a{
+    color: #6C63FF;
+    font-weight: 900;
+}
+
+#footer-content span{
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto .25%;
+}
+/* fim configurações footer */
+/* end settings footer */
+
+/* Configuração de popUp de informação */
+/* Adjust Title Information PopUp Configuration */
+#alert {
+    display: flex;
+    align-items: center;
+    top: 0;
+    position: absolute;
+}
+
+#triangle {
+    width: 7px;
+    height: 7px;
+    background: linear-gradient(to bottom right, #21222C 0%, #21222C 50%, #21222C 50%, #21222C 100%);
+    border: 1px solid #6C63FF;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(135deg);
+    margin-right: -4.5px;
+}
+
+#content {
+    width: fit-content;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #6C63FF;
+    background-color: #21222C;
+}
+
+#content span{
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+}
+/* Fim das configurações de popUp de informações */
+/* end settings Information PopUp  */
+/* Classe para listar codigos */
+
+.source{
+    transition: 5s;
+    background-color: #191A21;
+    animation: test 2s forwards;    
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100% - 25px);
+    min-height: calc(100% - 25px);
+}
+
+.source{
+    overflow: auto;
+    width: 400px;
+    height: 50%;
+}
+
+.source::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+.source::-webkit-scrollbar-thumb{
+    background-color: rgba(124, 124, 124, 0.651);
+}
+
+@keyframes test {
+    0%{
+        height: 0%;
+        overflow: hidden;
+        color: #FFF;
+    }
+    10%{
+        color: #00ff00;
+
+    }
+    20%{
+        color: #FFF;
+    }
+    30%{
+        color: #00ff00;
+
+    }
+    40%{
+        color: #FFF;
+
+    }
+    50%{
+        color: #00ff00;
+
+    }
+    70%{
+        color: #FFF;
+
+    }
+    80%{
+        color: #00ff00;
+
+    }
+    90%{
+        color: #FFF;
+
+    }
+    100%{
+        height: 100%;
+        overflow: auto;
+        color: #00ff00;
+    }
+}
+
+
