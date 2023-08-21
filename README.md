@@ -1,7 +1,7 @@
 
 #  Meu Portfolio
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)![Build Passed](https://img.shields.io/badge/build-passing-brightgreen)
-[![Web Page](https://img.shields.io/badge/Pagina-Web-green)](https://mrigortbr.github.io/Portifolio/)
+[![Web Page](https://img.shields.io/badge/Pagina-Web-green)](https://mrigortbr.github.io/Portfolio/)
 
 
 Apresentando meu portfólio: Uma coleção diversificada de projetos que destacam minha experiência e habilidades. Explore e conheça meu trabalho! Decidi seguir no tema do Visual Studio Code pois é a ferramenta que mais uso espero que goste! 
