@@ -163,13 +163,13 @@ function initPages(){
     const appElement = document.getElementById("app");
     const accumulatedHTML = [];
     
-    for (const files of elements) {
+    for (const [cont, files] of elements.entries()) {
+        accumulatedHTML.push(cont)
         fetch(files.file)
             .then(response => response.text())
             .then(html => {
-                accumulatedHTML.push(html);
-                
-                if (accumulatedHTML.length === elements.length) {
+                accumulatedHTML[cont] = html
+                if (cont === elements.length-1) {
                     // Todos os arquivos foram carregados, agora podemos adicionar o conteúdo ao elemento
                     appElement.innerHTML = accumulatedHTML.join('');
                     initCarousel()
