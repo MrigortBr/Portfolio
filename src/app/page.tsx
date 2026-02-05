@@ -1,3 +1,9 @@
+import Index from "@/components/switchTheme/component";
+
 export default function Home() {
-    return <div></div>;
+  return (
+    <div>
+      <Index></Index>
+    </div>
+  );
 }
