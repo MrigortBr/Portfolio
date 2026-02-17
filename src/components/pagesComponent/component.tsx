@@ -1,6 +1,4 @@
 import { Dispatch, RefObject, SetStateAction, useEffect, useRef } from "react";
-import PagesComponent2 from "./component2";
-import PagesComponent3 from "./component3";
 import { PageContainer } from "./style";
 import { Pages } from "@/data/page";
 
