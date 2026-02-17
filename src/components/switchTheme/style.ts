@@ -22,7 +22,7 @@ export const SwitchContainer = styled.div<{ $light: boolean }>`
     height: 3vh;
     border-radius: 100%;
     top: 0;
-    background-color: #454545;
+    background-color: ${(prop) => prop.theme.colors.custom?.searchBorder};
     z-index: 3;
 
     transition: 500ms;

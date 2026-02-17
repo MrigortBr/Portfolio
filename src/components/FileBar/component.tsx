@@ -1,12 +1,31 @@
+import {
+  RefObject,
+  Dispatch,
+  SetStateAction,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 import { FileContainer, FileTitle, FileWrapper } from "./style";
 import { FaReact } from "react-icons/fa";
+import { Pages, sideItem } from "@/data/page";
 
-export default function FileBarComponent() {
+type prop = {
+  pageIndex: number;
+};
+
+export default function FileBarComponent({ pageIndex }: prop) {
+  const file = useMemo(() => {
+    return Pages[pageIndex]?.side ?? null;
+  }, [pageIndex]);
+
   return (
     <FileContainer>
       <FileWrapper>
-        <FaReact color='#00DBFF'></FaReact>
-        <FileTitle>Test.tsx</FileTitle>
+        <file.icon color={file.color} />
+        <FileTitle>
+          {file.title}.{file.type}
+        </FileTitle>
       </FileWrapper>
     </FileContainer>
   );

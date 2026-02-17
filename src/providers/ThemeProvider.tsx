@@ -4,7 +4,6 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { ThemeProvider as NextThemeProvider, useTheme } from "next-themes";
-
 import { lightTheme, darkTheme } from "@/styles/theme";
 import { DefaultTheme } from "styled-components";
 
@@ -13,23 +12,26 @@ interface Props {
 }
 
 function StyledThemeBridge({ children }: Props) {
-  const { theme, systemTheme } = useTheme();
-
+  const { theme, systemTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
 
-  const resolvedTheme: DefaultTheme = !mounted
-    ? darkTheme
-    : theme === "system"
-      ? systemTheme === "dark"
-        ? darkTheme
-        : lightTheme
-      : theme === "dark"
-        ? darkTheme
-        : lightTheme;
+    // 🔥 Se não houver preferência salva, usa o sistema
+    const savedTheme = localStorage.getItem("theme");
+
+    if (!savedTheme) {
+      setTheme("system");
+    }
+  }, [setTheme]);
+
+  if (!mounted) return null;
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
+
+  const resolvedTheme: DefaultTheme =
+    currentTheme === "dark" ? darkTheme : lightTheme;
 
   return (
     <StyledThemeProvider theme={resolvedTheme}>{children}</StyledThemeProvider>
@@ -38,7 +40,12 @@ function StyledThemeBridge({ children }: Props) {
 
 export function ThemeProvider({ children }: Props) {
   return (
-    <NextThemeProvider attribute='class' defaultTheme='system' enableSystem>
+    <NextThemeProvider
+      attribute='class'
+      defaultTheme='system'
+      enableSystem
+      storageKey='theme' // salva no localStorage automaticamente
+    >
       <StyledThemeBridge>{children}</StyledThemeBridge>
     </NextThemeProvider>
   );

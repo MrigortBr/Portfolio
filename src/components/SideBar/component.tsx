@@ -10,8 +10,7 @@ import { VscChevronDown } from "react-icons/vsc";
 import { FaReact } from "react-icons/fa";
 import { IconWrapper } from "../ActivityBar/style";
 import { Pages } from "@/data/page";
-import { Dispatch, SetStateAction, useEffect } from "react";
-import { PageContainer } from "../pagesComponent/style";
+import { Dispatch, SetStateAction } from "react";
 
 type prop = {
   pageIndex: number;

@@ -4,6 +4,11 @@ export const FileContainer = styled.div`
   width: 100%;
   background-color: ${(prop) => prop.theme.colors.custom?.header};
   border-bottom: 1px solid ${(props) => props.theme.colors.custom?.border};
+
+  @media (max-width: 768px) {
+    position: absolute;
+    display: none;
+  }
 `;
 
 export const FileWrapper = styled.div`

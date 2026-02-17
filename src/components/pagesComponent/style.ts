@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  background-color: red;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -12,5 +11,12 @@ export const PageContainer = styled.div`
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 95vh;
+    margin-top: 0;
+    overflow-x: hidden;
   }
 `;

@@ -7,40 +7,62 @@ import { PiCertificateThin } from "react-icons/pi";
 import { BsFileEarmarkArrowDown } from "react-icons/bs";
 import { CiFolderOn } from "react-icons/ci";
 
+enum initialActivity {
+  OPENLINK,
+  SWITCHPAGE,
+}
+
 const initialActivityItens = [
   {
     Icon: VscFile,
     selected: true,
+    type: initialActivity.SWITCHPAGE,
+    principalInMobile: false,
     title: "Portfólio",
   },
   {
     Icon: FaCode,
     selected: false,
+    type: initialActivity.SWITCHPAGE,
+    principalInMobile: false,
     title: "Código",
   },
   {
     Icon: VscSourceControl,
     selected: false,
+    type: initialActivity.OPENLINK,
+    link: "https://github.com/MrigortBr/Portfolio",
+    principalInMobile: true,
     title: "Projeto",
   },
   {
     Icon: MdOutlineChecklistRtl,
     selected: false,
+    type: initialActivity.SWITCHPAGE,
+    principalInMobile: false,
     title: "Todo",
   },
   {
     Icon: PiCertificateThin,
     selected: false,
+    type: initialActivity.OPENLINK,
+    link: "https://github.com/MrigortBr/Portfolio/blob/main/LICENCE",
+    principalInMobile: true,
     title: "Certificado",
   },
   {
     Icon: BsFileEarmarkArrowDown,
     selected: false,
+    type: initialActivity.OPENLINK,
+    link: "Curriculo Igor Pereira Lins.pdf",
+    principalInMobile: true,
     title: "Curríulo",
   },
   {
     Icon: CiFolderOn,
     selected: false,
+    type: initialActivity.SWITCHPAGE,
+    principalInMobile: false,
     title: "Arquivos",
   },
 ];
@@ -49,12 +71,16 @@ export default function ActivityBarComponent() {
   const [activityItens, setActivityItens] = useState(initialActivityItens);
 
   function handleSelect(index: number) {
-    setActivityItens((prev) =>
-      prev.map((item, i) => ({
-        ...item,
-        selected: i === index,
-      }))
-    );
+    if (initialActivityItens[index].type == initialActivity.SWITCHPAGE) {
+      setActivityItens((prev) =>
+        prev.map((item, i) => ({
+          ...item,
+          selected: i === index,
+        }))
+      );
+    } else if (initialActivityItens[index].type == initialActivity.OPENLINK) {
+      window.open(initialActivityItens[index].link, "_blank");
+    }
   }
 
   return (
@@ -62,6 +88,7 @@ export default function ActivityBarComponent() {
       {activityItens.map((ai, i) => {
         return (
           <IconWrapper
+            $show={ai.principalInMobile}
             key={i}
             icon={ai.Icon}
             $Select={ai.selected}

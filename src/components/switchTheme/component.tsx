@@ -3,24 +3,24 @@
 import { useTheme } from "next-themes";
 import { SwitchContainer, SwitchItemWrapper } from "./style";
 import { IoSunny, IoMoonOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
-  const { setTheme } = useTheme();
-  const [theme, setThemeState] = useState<"light" | "dark">("dark");
+  const { setTheme, theme } = useTheme();
+  const [themeLocal, setThemeState] = useState<"light" | "dark">(
+    theme == "light" ? "light" : "dark"
+  );
 
   function tradeTheme(theme: string) {
-    console.log(theme);
     const newTheme = theme == "light" ? "dark" : "light";
-    console.log(newTheme);
     setTheme(newTheme);
     setThemeState(newTheme);
   }
 
   return (
     <SwitchContainer
-      $light={theme == "light"}
-      onClick={() => tradeTheme(theme)}
+      $light={themeLocal == "light"}
+      onClick={() => tradeTheme(themeLocal)}
     >
       <SwitchItemWrapper className='left'>
         <IoSunny />

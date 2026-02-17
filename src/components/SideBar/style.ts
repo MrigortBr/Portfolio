@@ -8,6 +8,11 @@ export const SideBar = styled.div`
   border-right: 1px solid ${(props) => props.theme.colors.custom?.border};
   grid-row-start: 2;
   grid-row-end: 4;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    display: none;
+  }
 `;
 
 export const TitleSideBar = styled.h3`

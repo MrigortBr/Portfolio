@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-function PagesComponent2(
-  props: { tag: "string" },
+export function PagesComponent2(
+  props: {},
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   return (

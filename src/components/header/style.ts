@@ -12,6 +12,11 @@ export const VisualHeader = styled.header`
   box-sizing: border-box;
   grid-column-start: 1;
   grid-column-end: 4;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 5vh;
+  }
 `;
 
 export const VisualSearchWrapper = styled.div`
@@ -26,6 +31,10 @@ export const VisualSearchWrapper = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
 `;
 
 export const VisualSearch = styled.span`

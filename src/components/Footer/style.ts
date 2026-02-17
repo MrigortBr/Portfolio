@@ -10,6 +10,10 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   border-top: 1px solid ${(prop) => prop.theme.colors.custom?.border};
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const FooterInfoContainer = styled.div`

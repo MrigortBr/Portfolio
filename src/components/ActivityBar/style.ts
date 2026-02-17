@@ -6,9 +6,28 @@ export const AcitivityBar = styled.div`
   width: 100%;
   grid-row-start: 2;
   grid-row-end: 4;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    border-radius: 20px;
+    left: 25%;
+    bottom: 10vh;
+    height: 7vh;
+    gap: 1vw;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px 5px #00000070;
+    z-index: 1500;
+  }
 `;
 
-export const IconWrapper = styled(CustomIcon)<{ $Select: boolean }>`
+export const IconWrapper = styled(CustomIcon)<{
+  $Select: boolean;
+  $show: boolean;
+}>`
   width: 100%;
   height: fit-content;
   min-width: 16px;
@@ -18,6 +37,7 @@ export const IconWrapper = styled(CustomIcon)<{ $Select: boolean }>`
   justify-content: center;
   transition: 100ms;
   position: relative;
+  display: ${({ $show }) => ($show == true ? "visible" : "none")};
 
   &::before {
     content: "";
@@ -60,6 +80,12 @@ export const IconWrapper = styled(CustomIcon)<{ $Select: boolean }>`
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  @media (max-width: 768px) {
+    height: 15vw;
+    width: 15vw;
+    z-index: 1100;
   }
 `;
 

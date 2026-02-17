@@ -1,44 +1,104 @@
-import PagesComponent3 from "@/components/pagesComponent/component3";
-import component2 from "@/components/pagesComponent/component2";
-import { ForwardRefExoticComponent, RefAttributes, RefObject } from "react";
+import ProjectComponent from "@/components/projects/component";
+import AboutMeComponent from "@/components/aboutme/component";
+import {
+  Dispatch,
+  ForwardRefExoticComponent,
+  RefAttributes,
+  SetStateAction,
+} from "react";
 import { IconType } from "react-icons";
 import { FaReact } from "react-icons/fa";
-
+import HelloComponent from "@/components/Hello/component";
+import CertificatesComponent from "@/components/certificates/component";
+import ThankYouComponent from "@/components/thankyou/component";
+import StacksComponent from "@/components/stacks/component";
+import ExperienceComponent from "@/components/Experience/component";
 type page = {
-  component: ForwardRefExoticComponent<RefAttributes<HTMLDivElement>>;
+  component: ForwardRefExoticComponent<
+    {
+      setPageIndex: Dispatch<SetStateAction<number>>;
+    } & RefAttributes<HTMLDivElement>
+  >;
   dom: string;
   side: sideItem;
 };
 
-type sideItem = {
+export type sideItem = {
   title: string;
   type: string;
   icon: IconType;
   color: string;
-  selected: boolean;
 };
 
 export const Pages: page[] = [
   {
-    component: PagesComponent3,
-    dom: "PT1",
+    component: HelloComponent,
+    dom: "Hello",
     side: {
-      title: "Test",
+      title: "Olá",
       type: "tsx",
       icon: FaReact,
       color: "#00DBFF",
-      selected: true,
     },
   },
   {
-    component: component2,
-    dom: "PT2",
+    component: AboutMeComponent,
+    dom: "About",
     side: {
-      title: "Test 2",
+      title: "Sobre mim",
       type: "tsx",
       icon: FaReact,
       color: "#00DBFF",
-      selected: false,
+    },
+  },
+  {
+    component: ProjectComponent,
+    dom: "projetos",
+    side: {
+      title: "Projetos",
+      type: "tsx",
+      icon: FaReact,
+      color: "#00DBFF",
+    },
+  },
+  {
+    component: StacksComponent,
+    dom: "stack",
+    side: {
+      title: "Competências",
+      type: "tsx",
+      icon: FaReact,
+      color: "#00DBFF",
+    },
+  },
+  //   {
+  //     component: ExperienceComponent,
+  //     dom: "experiencia",
+  //     side: {
+  //       title: "Experiência",
+  //       type: "tsx",
+  //       icon: FaReact,
+  //       color: "#00DBFF",
+  //     },
+  //   }, //TODO
+  {
+    component: CertificatesComponent,
+    dom: "certificados",
+    side: {
+      title: "Certificados",
+      type: "tsx",
+      icon: FaReact,
+      color: "#00DBFF",
+    },
+  }, //TODO
+  {
+    component: ThankYouComponent,
+    dom: "Obrigado",
+    side: {
+      title: "Obrigado",
+      type: "tsx",
+      icon: FaReact,
+      color: "#00DBFF",
     },
   },
 ];

@@ -33,6 +33,7 @@ export default function PagesComponent({
         return (
           <p.component
             key={i}
+            setPageIndex={setPageIndex}
             ref={(el: HTMLDivElement | null) => {
               refs.current[i] = el;
             }}
