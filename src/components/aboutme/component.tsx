@@ -69,7 +69,7 @@ const langs = [
   },
   {
     name: "OracleSQL",
-    image: "/lang/OracleSQL.svg",
+    image: "/lang/oracle.svg",
   },
   {
     name: "MySql",
@@ -85,7 +85,7 @@ const langs = [
   },
   {
     name: "Power BI",
-    image: "/lang/Power bi.svg",
+    image: "/lang/powerbi.svg",
   },
   {
     name: "Amazon Web Service",
