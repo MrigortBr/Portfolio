@@ -69,7 +69,7 @@ const langs = [
   },
   {
     name: "OracleSQL",
-    image: "/lang/OracleSQL.svg",
+    image: "/lang/oracle.svg",
   },
   {
     name: "MySql",
@@ -85,7 +85,7 @@ const langs = [
   },
   {
     name: "Power BI",
-    image: "/lang/Power bi.svg",
+    image: "/lang/powerbi.svg",
   },
   {
     name: "Amazon Web Service",
@@ -104,25 +104,25 @@ const langs = [
 const best = [
   {
     name: "Node.js",
-    image: "/lang/node.svg",
+    image: "/lang/Node.svg",
     margintop: "-2%",
     borderr: "40% 60% 70% 30% / 40% 50% 60% 50%",
   },
   {
     name: "Typescript",
-    image: "/lang/typescript.svg",
+    image: "/lang/Typescript.svg",
     margintop: "0%",
     borderr: "40% 50% 70% 30% / 40% 40% 60% 50%",
   },
   {
     name: "Next.js",
-    image: "/lang/nextjs.svg",
+    image: "/lang/Nextjs.svg",
     margintop: "2%",
     borderr: "40% 60% 50% 30% / 40% 50% 40% 50%",
   },
   {
     name: "Power BI",
-    image: "/lang/Power bi.svg",
+    image: "/lang/powerbi.svg",
     margintop: "0%",
     borderr: "40% 60% 70% 50% / 40% 50% 60% 70%",
   },
