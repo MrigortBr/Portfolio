@@ -46,7 +46,7 @@ const initialActivityItens = [
     Icon: PiCertificateThin,
     selected: false,
     type: initialActivity.OPENLINK,
-    link: "https://github.com/MrigortBr/Portfolio/blob/main/LICENCE",
+    link: "https://github.com/MrigortBr/Portfolio/blob/main/license",
     principalInMobile: true,
     title: "Certificado",
   },
