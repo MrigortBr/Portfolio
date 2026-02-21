@@ -12,7 +12,6 @@ import HelloComponent from "@/components/Hello/component";
 import CertificatesComponent from "@/components/certificates/component";
 import ThankYouComponent from "@/components/thankyou/component";
 import StacksComponent from "@/components/stacks/component";
-import ExperienceComponent from "@/components/Experience/component";
 type page = {
   component: ForwardRefExoticComponent<
     {
@@ -71,16 +70,6 @@ export const Pages: page[] = [
       color: "#00DBFF",
     },
   },
-  //   {
-  //     component: ExperienceComponent,
-  //     dom: "experiencia",
-  //     side: {
-  //       title: "Experiência",
-  //       type: "tsx",
-  //       icon: FaReact,
-  //       color: "#00DBFF",
-  //     },
-  //   }, //TODO
   {
     component: CertificatesComponent,
     dom: "certificados",
@@ -90,7 +79,7 @@ export const Pages: page[] = [
       icon: FaReact,
       color: "#00DBFF",
     },
-  }, //TODO
+  },
   {
     component: ThankYouComponent,
     dom: "Obrigado",

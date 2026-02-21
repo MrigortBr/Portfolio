@@ -14,7 +14,7 @@ export const CertificatesContainer = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     height: fit-content;
-    min-height: 250vh;
+
     gap: 0;
   }
 `;
@@ -37,11 +37,46 @@ export const CertificatesListContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1%;
+  position: relative;
 
   @media (max-width: 768px) {
     margin-top: 0;
     padding: 2vh 1%;
   }
+`;
+
+export const ButtonSwitch = styled.button<{ $visible: boolean }>`
+  width: 5vh;
+  height: 5vh;
+  font-size: 3vh;
+  border: 1px solid lightblue;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin: auto;
+
+  display: ${({ $visible }) => ($visible ? "flex" : "none")};
+
+  font-family: "SN Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  z-index: 1000;
+  background-color: ${(prop) => prop.theme.colors.customPallete?.purplePrimary};
+
+  cursor: pointer;
+
+  transition: 500ms;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  position: absolute;
 `;
 
 export const CertificatesListItem = styled.div`
@@ -76,6 +111,8 @@ export const CertificatesListItem = styled.div`
   & > p {
     font-family: "SN Pro", sans-serif;
     font-weight: 400;
+    width: 100%;
+    text-align: center;
   }
 
   @media (max-width: 768px) {
@@ -91,7 +128,6 @@ export const CertificatesListItem = styled.div`
 
 export const Tags = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
   justify-content: center;

@@ -174,7 +174,7 @@ export function AboutMeComponent(
             <p>Projetos Publicados</p>
           </li>
           <li>
-            <p className='value'>10+</p>
+            <p className='value'>30+</p>
             <p>Certificados</p>
           </li>
         </ul>
