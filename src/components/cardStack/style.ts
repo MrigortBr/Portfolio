@@ -13,6 +13,13 @@ export const Card = styled.div`
   height: fit-content;
   color: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 1366px) {
+    max-height: 95%;
+    padding: 10px;
+    width: 97%;
+    max-height: 100%;
+  }
 `;
 
 export const Header = styled.div`
@@ -20,6 +27,10 @@ export const Header = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 20px;
+
+  @media (max-width: 1366px) {
+    margin-bottom: 1vh;
+  }
 `;
 
 export const Badge = styled.div`
@@ -37,6 +48,10 @@ export const Title = styled.h2`
   font-weight: 600;
   margin: 0;
   color: ${(prop) => prop.theme.colors.text};
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.7rem, 0.5vw, 3rem);
+  }
 `;
 
 export const Tags = styled.div`
@@ -58,5 +73,10 @@ export const Tag = styled.div<{ $color: string }>`
     background: #2d1f44;
     cursor: pointer;
     transform: rotate(5deg);
+  }
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.5rem, 0.5vw, 3rem);
+    padding: 8px 8px;
   }
 `;

@@ -47,6 +47,10 @@ export const AboutTextWrapper = styled.div`
       width: 100%;
     }
   }
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.7rem, 0.5vw, 3rem);
+  }
 `;
 
 const morph = keyframes`
@@ -129,6 +133,10 @@ export const ExperienceWrapper = styled.div`
   @media (max-width: 768px) {
     width: 90%;
     font-size: clamp(0.6rem, 1vw, 1rem);
+  }
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.7rem, 0.5vw, 3rem);
   }
 `;
 
@@ -237,5 +245,12 @@ export const ItemSkill = styled.div`
     & > p {
       display: none;
     }
+  }
+
+  @media (max-width: 1366px) {
+    height: 10vh;
+    width: 10vh;
+
+    font-size: clamp(0.7rem, 0.5vw, 3rem);
   }
 `;

@@ -124,6 +124,16 @@ export const CertificatesListItem = styled.div`
       font-size: clamp(0.6rem, 1vw, 1rem);
     }
   }
+
+  @media (max-width: 1366px) {
+    & > h1 {
+      font-size: clamp(0.5rem, 0.5vw, 3rem);
+    }
+
+    & > p {
+      font-size: clamp(0.5rem, 0.5vw, 3rem);
+    }
+  }
 `;
 
 export const Tags = styled.div`
@@ -155,5 +165,9 @@ export const Tag = styled.div`
     & > h1 {
       font-size: clamp(0.6rem, 1vw, 1rem);
     }
+  }
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.5rem, 0.5vw, 3rem);
   }
 `;
