@@ -244,6 +244,10 @@ export const Languages = styled.div`
       margin: 0;
     }
   }
+
+  @media (max-width: 1366px) {
+    font-size: clamp(0.7rem, 0.5vw, 3rem);
+  }
 `;
 
 export const ButtonSwitch = styled.button<{ $visible: boolean }>`

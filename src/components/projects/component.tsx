@@ -113,10 +113,10 @@ const projects: ProjectType[] = [
   {
     name: "UpDelivery",
     pictures: [
-      "UpDelivery1.png",
-      "UpDelivery2.png",
-      "UpDelivery3.png",
-      "UpDelivery4.png",
+      "updelivery1.png",
+      "updelivery2.png",
+      "updelivery3.png",
+      "updelivery4.png",
     ],
     lang: [
       "Java EE",

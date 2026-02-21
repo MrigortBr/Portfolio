@@ -14,13 +14,18 @@ export const Card = styled.div`
   height: 100%;
   grid-column-start: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
 
   color: white;
 
   @media (max-width: 768px) {
     margin-bottom: 0;
     height: fit-content;
+  }
+
+  @media (max-width: 1366px) {
+    height: 90%;
+    max-height: 95%;
   }
 `;
 
