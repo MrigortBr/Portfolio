@@ -15,7 +15,14 @@ export default function FooterComponent() {
         </FooterInfo>
       </FooterInfoContainer>
       <FooterCredits>
-        Desenvolvido por <a>MrIgortbr</a>
+        Desenvolvido por{" "}
+        <a
+          href='https://github.com/MrigortBr'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          MrIgortbr
+        </a>
       </FooterCredits>
     </FooterContainer>
   );

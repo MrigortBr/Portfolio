@@ -21,7 +21,7 @@ export const VisualHeader = styled.header`
 
 export const VisualSearchWrapper = styled.div`
   width: 25%;
-  height: 75%;
+  height: 30px;
   background-color: ${(props) => props.theme.colors.custom?.search};
   border: 1px solid ${(props) => props.theme.colors.custom?.searchBorder};
   color: ${(props) => props.theme.colors.custom?.searchText};
@@ -40,6 +40,9 @@ export const VisualSearchWrapper = styled.div`
 export const VisualSearch = styled.span`
   width: fit-content;
   height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 1;
   border: 0;
   background-color: transparent;
   text-align: center;

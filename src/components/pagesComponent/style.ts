@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
-  overflow: auto;
-  scrollbar-width: 0px;
+  scrollbar-width: none;
 
-  overflow-y: scroll;
+  /* Desktop: a troca de página é controlada pelo onWheel (scrollIntoView);
+     o scroll nativo fica desligado para não brigar com ele. */
+  overflow: hidden;
   scroll-snap-type: y mandatory;
 
   &::-webkit-scrollbar {
@@ -18,5 +19,6 @@ export const PageContainer = styled.div`
     height: 95vh;
     margin-top: 0;
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;

@@ -9,6 +9,7 @@ import FooterComponent from "@/components/Footer/component";
 import PagesComponent from "@/components/pagesComponent/component";
 import { Pages } from "@/data/page";
 import LoadingComponent from "@/components/spinnerLoading/component";
+import ExternalLinkGuard from "@/components/externalLink/component";
 import { VisualMain } from "./style";
 
 export default function Index() {
@@ -44,6 +45,7 @@ export default function Index() {
         setPageIndex={setpageIndex}
       />
       <FooterComponent />
+      <ExternalLinkGuard />
     </VisualMain>
   );
 }

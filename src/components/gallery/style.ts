@@ -1,191 +1,295 @@
 import styled, { css, keyframes } from "styled-components";
 
-const openAnimation = keyframes`
+const MOBILE = "@media (max-width: 768px)";
+const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+const overlayIn = keyframes`
+  from { opacity: 0; }
+  to   { opacity: 1; }
+`;
+
+const overlayOut = keyframes`
+  from { opacity: 1; }
+  to   { opacity: 0; }
+`;
+
+const enter = keyframes`
   from {
-    width: 0vw;
-    height: 0vh;
     opacity: 0;
-    left: 50%;
-    top: 50%;
+    transform: translateX(calc(var(--dir) * 48px)) scale(0.97);
   }
   to {
-    width: 100vw;
-    height: 100vh;
     opacity: 1;
-    left: 0;
-    top: 0;
+    transform: translateX(0) scale(1);
   }
 `;
 
-const closeAnimation = keyframes`
-  from {
-    width: 100vw;
-    height: 100vh;
-    opacity: 1;   
-    left: 0;
-    top: 0;
-  }
-  to {
-    width: 0vw;
-    height: 0vh;
-    opacity: 0;
-    left: 50%;
-    top: 50%;
-  }
+const contentIn = keyframes`
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
 `;
 
-export const GalleryContainer = styled.div<{ $isOpen: boolean }>`
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
+const contentOut = keyframes`
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.96); }
+`;
 
-  animation: ${({ $isOpen }) =>
-    $isOpen
-      ? css`
-          ${openAnimation} 0.5s ease forwards
-        `
-      : css`
-          ${closeAnimation} 0.5s ease forwards
-        `};
+const glass = css`
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+`;
+
+export const Overlay = styled.div<{ $closing: boolean }>`
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 12px;
+  padding: 16px 20px 14px;
+  background: rgba(8, 8, 12, 0.88);
+  backdrop-filter: blur(14px);
+  outline: none;
+  user-select: none;
+  animation: ${({ $closing }) => ($closing ? overlayOut : overlayIn)} 250ms ease
+    forwards;
 
   & > * {
-    z-index: 1001;
+    animation: ${({ $closing }) => ($closing ? contentOut : contentIn)} 300ms
+      ${EASE} both;
   }
 
-  & > header {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    padding: 1%;
-  }
-
-  & > header > p {
-    width: 100%;
-    text-align: center;
-    font-family: Inter;
-    font-size: clamp(1rem, 0.5vw, 3rem);
-    margin: auto;
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    width: 100vw;
-
-    display: flex;
-
-    & > header {
-      top: 10vh;
-      z-index: 1500;
-      position: absolute;
-    }
+  ${MOBILE} {
+    padding: 12px 10px 16px;
+    gap: 10px;
   }
 `;
 
-export const CloseButton = styled.button`
-  width: 5vh;
-  height: 5vh;
-  font-size: 5vh;
-  background-color: transparent;
-  border: none;
-  outline: none;
+/* ---------- Topo ---------- */
 
-  font-family: "SN Pro", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  color: ${(prop) => prop.theme.colors.customPallete?.purplePrimary};
-  cursor: pointer;
-
-  transition: 500ms;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  @media (max-width: 768px) {
-    z-index: 1600;
-    margin-right: 1vw;
-  }
-`;
-
-export const GalleryContent = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 5% 90% 5%;
-  height: 90vh;
-  & > button {
-    width: 5vh;
-    height: 5vh;
-    font-size: 3vh;
-    background-color: transparent;
-    border: 1px solid lightblue;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    margin: auto;
-
-    font-family: "SN Pro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    color: ${(prop) => prop.theme.colors.customPallete?.purplePrimary};
-    background-color: ${(prop) =>
-      prop.theme.colors.customPallete?.purpleTranslucentSecondary};
-
-    cursor: pointer;
-
-    transition: 500ms;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
-    grid-template-columns: 10% 80% 10%;
-  }
-`;
-
-export const ImagesWrapper = styled.div`
-  display: flex; /* alinhamento horizontal */
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 90vw;
-
-  ::-webkit-scrollbar {
-    display: none; /* esconde scrollbar no Chrome/Safari */
-  }
-
-  @media (max-width: 768px) {
-    width: 80vw;
-  }
-`;
-
-export const ImgContainer = styled.div`
-  width: 90vw;
-  height: 85vh;
+export const TopBar = styled.header`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+`;
+
+export const Counter = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: Inter, sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+
+  & > strong {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+`;
+
+export const TopActions = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const IconButton = styled.button`
+  ${glass}
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  &:focus-visible {
+    outline: 2px solid
+      ${({ theme }) => theme.colors.customPallete?.purplePrimary};
+    outline-offset: 2px;
+  }
+`;
+
+/* ---------- Imagem ---------- */
+
+export const Viewer = styled.div`
+  position: relative;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 72px;
+  touch-action: pan-y;
+
+  ${MOBILE} {
+    padding: 0;
+  }
+`;
+
+export const Frame = styled.div<{ $direction: 1 | -1; $zoomed: boolean }>`
+  --dir: ${({ $direction }) => $direction};
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: ${({ $zoomed }) => ($zoomed ? "zoom-out" : "zoom-in")};
+  animation: ${enter} 450ms ${EASE} both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 1ms;
+  }
+`;
+
+export const ZoomLayer = styled.div`
+  position: absolute;
+  inset: 0;
+  transition: transform 350ms ${EASE};
+  will-change: transform;
 
   & > img {
-    width: 90vw;
     object-fit: contain;
-    max-height: 85vh;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+`;
+
+export const NavArrow = styled.button`
+  ${glass}
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
+
+  &.prev {
+    left: 4px;
+  }
+  &.next {
+    right: 4px;
+  }
+
+  & > svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.customPallete?.purplePrimary};
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  &:focus-visible {
+    outline: 2px solid
+      ${({ theme }) => theme.colors.customPallete?.purplePrimary};
+    outline-offset: 2px;
+  }
+
+  ${MOBILE} {
+    display: none;
+  }
+`;
+
+/* ---------- Miniaturas ---------- */
+
+export const Thumbs = styled.div`
+  display: flex;
+  justify-content: safe center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const Thumb = styled.button<{ $active: boolean }>`
+  position: relative;
+  flex: 0 0 auto;
+  width: 112px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid
+    ${({ $active, theme }) =>
+      $active ? theme.colors.customPallete?.purplePrimary : "transparent"};
+  opacity: ${({ $active }) => ($active ? 1 : 0.45)};
+  transform: ${({ $active }) => ($active ? "translateY(-2px)" : "none")};
+  transition:
+    opacity 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ${EASE};
+
+  & > img {
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  ${MOBILE} {
+    width: 72px;
+    border-radius: 8px;
+  }
+`;
+
+export const Hint = styled.p`
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+
+  & > kbd {
+    font-family: inherit;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  ${MOBILE} {
+    display: none;
   }
 `;

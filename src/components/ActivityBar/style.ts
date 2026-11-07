@@ -37,7 +37,6 @@ export const IconWrapper = styled(CustomIcon)<{
   justify-content: center;
   transition: 100ms;
   position: relative;
-  display: ${({ $show }) => ($show == true ? "visible" : "none")};
 
   &::before {
     content: "";
@@ -83,6 +82,7 @@ export const IconWrapper = styled(CustomIcon)<{
   }
 
   @media (max-width: 768px) {
+    display: ${({ $show }) => ($show ? "flex" : "none")};
     height: 15vw;
     width: 15vw;
     z-index: 1100;
