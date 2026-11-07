@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import Image from "next/image";
-import { LuCalendar, LuClock } from "react-icons/lu";
+import { LuAward, LuCalendar, LuClock } from "react-icons/lu";
 import { useInView } from "@/hooks/useInView";
 import CountUp from "../countUp/component";
 import { Counter, ProjectsHeader, ProjectsTitle } from "../projects/style";
@@ -126,7 +126,11 @@ function CertificatesComponent(
           >
             <CardHeader>
               <Logo>
-                <Image src={c.img} width={40} height={40} alt='' />
+                {c.img ? (
+                  <Image src={c.img} width={40} height={40} alt='' />
+                ) : (
+                  <LuAward className='fallback' />
+                )}
               </Logo>
               <div>
                 <h3 title={c.title}>{c.title}</h3>

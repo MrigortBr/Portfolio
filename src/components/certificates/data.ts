@@ -3,10 +3,12 @@ export type CertificateCategory =
   | "dados"
   | "mobile"
   | "ferramentas"
-  | "fundamentos";
+  | "fundamentos"
+  | "saude";
 
 export type Certificate = {
-  img: string;
+  /** logo da instituição; sem logo = ícone de certificado */
+  img?: string;
   title: string;
   issuer: string;
   /** carga horária */
@@ -25,6 +27,7 @@ export const categoryAccent: Record<CertificateCategory | "todos", string> = {
   mobile: "#38BDF8",
   ferramentas: "#2DD4BF",
   fundamentos: "#4ADE80",
+  saude: "#F472B6",
 };
 
 export const categories: {
@@ -36,11 +39,30 @@ export const categories: {
   { id: "dados", label: "Dados & BI" },
   { id: "mobile", label: "Mobile" },
   { id: "ferramentas", label: "Git & Ferramentas" },
+  { id: "saude", label: "Saúde pública" },
   { id: "fundamentos", label: "Fundamentos" },
 ];
 
 /** Ordenados do mais recente para o mais antigo */
 export const certificates: Certificate[] = [
+  {
+    title:
+      "Oficina de Articulação da Rede de Apoio à Execução do Censo dos Centros de Especialidades Odontológicas (CEO) e dos Serviços de Especialidades em Saúde Bucal (Sesb)",
+    issuer: "Censo CEO e Sesb · Brasil 2026",
+    hours: 12,
+    date: "09/2026",
+    tags: ["Saúde Bucal", "SUS", "Censo"],
+    category: "saude",
+  },
+  {
+    img: "/bradesco.png",
+    title: "GenAI & Dados",
+    issuer: "Fundação Bradesco",
+    hours: 52,
+    date: "08/2026",
+    tags: ["IA Generativa", "Dados", "Prompt"],
+    category: "dados",
+  },
   {
     img: "/Udemy.svg",
     title: "Curso de JavaScript e TypeScript do Básico ao Avançado",

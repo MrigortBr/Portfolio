@@ -177,6 +177,13 @@ export const Logo = styled.span`
     height: 30px;
     object-fit: contain;
   }
+
+  /* certificado sem logo: ícone na cor da categoria */
+  & > .fallback {
+    width: 22px;
+    height: 22px;
+    color: var(--accent);
+  }
 `;
 
 export const Card = styled.article`
