@@ -33,6 +33,7 @@ import {
   ExpandHint,
   Info,
   InfoText,
+  Lead,
   NavButton,
   Progress,
   ProjectsContainer,
@@ -67,6 +68,13 @@ type ProjectType = {
   team?: TeamMember[];
 };
 
+/**
+ * Total aproximado de projetos já desenvolvidos (o carrossel mostra só uma
+ * seleção). Atualize aqui — o número aparece no Sobre mim e nesta seção.
+ */
+export const TOTAL_PROJECTS = 55;
+
+/** Projetos em destaque exibidos no carrossel */
 export const projects: ProjectType[] = [
   {
     name: "Hell on Tap",
@@ -269,9 +277,14 @@ export function ProjectComponent(
       data-visible={visible ? "true" : "false"}
     >
       <ProjectsHeader>
-        <ProjectsTitle>Projetos</ProjectsTitle>
+        <div>
+          <ProjectsTitle>Projetos</ProjectsTitle>
+          <Lead>
+            Uma seleção entre os {TOTAL_PROJECTS}+ projetos que já desenvolvi
+          </Lead>
+        </div>
         <Counter aria-live='polite'>
-          <strong>{pad(active + 1)}</strong> / {pad(total)}
+          <strong>{pad(active + 1)}</strong> / {pad(total)} em destaque
         </Counter>
       </ProjectsHeader>
 

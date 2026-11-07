@@ -21,7 +21,7 @@ import { useFitToHeight } from "@/hooks/useFitToHeight";
 import { SECTION } from "@/data/sections";
 import CountUp from "../countUp/component";
 import { ProjectsHeader, ProjectsTitle } from "../projects/style";
-import { projects } from "../projects/component";
+import { TOTAL_PROJECTS } from "../projects/component";
 import { totalTechs } from "../stacks/data";
 import { certificates } from "../certificates/data";
 import { yearsOfExperience } from "../Experience/data";
@@ -59,8 +59,9 @@ const stats: StatItem[] = [
     section: SECTION.experience,
   },
   {
-    value: projects.length,
-    label: "projetos",
+    value: TOTAL_PROJECTS,
+    suffix: "+",
+    label: "projetos desenvolvidos",
     icon: LuFolderGit2,
     accent: "#8B7CFF",
     section: SECTION.projects,

@@ -83,6 +83,14 @@ export const ProjectsTitle = styled.h1`
   }
 `;
 
+/** linha de apoio abaixo do título da seção */
+export const Lead = styled.p`
+  margin-top: 4px;
+  padding-left: 10px;
+  font-size: 0.85rem;
+  color: ${({ theme }) => theme.colors.customPallete?.unselectedColor};
+`;
+
 export const Counter = styled.span`
   font-family: Inter, sans-serif;
   font-variant-numeric: tabular-nums;
